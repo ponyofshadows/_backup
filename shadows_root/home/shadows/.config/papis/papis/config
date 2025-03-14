@@ -1,0 +1,8 @@
+[papers]
+dir = ~/_chest/papers
+opentool = okular
+editor = nvim
+
+[settings]
+default-library = papers
+

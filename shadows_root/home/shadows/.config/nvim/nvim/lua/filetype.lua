@@ -1,0 +1,3 @@
+-- vim.cmd([[
+--  autocmd BufNewFile,BufRead *.tex set filetype=tex
+-- ]])

@@ -1,0 +1,10 @@
+[Unit]
+Description=Battery warning script
+After=graphical.target
+
+[Service]
+Type=oneshot
+ExecStart=~/.local/bin/battery_warning.sh
+
+[Install]
+WantedBy=multi-user.target
