@@ -63,6 +63,7 @@ case $mode in
       exit 1
     fi
     rsync -aH --delete --exclude "/.*" --progress "$rsync_from/" "$rsync_to/"
+    rsync -aH --delete --progress "$rsync_from/._backup" "$rsync_to/"
     ;;
   restore)
     case $# in
@@ -88,5 +89,6 @@ case $mode in
       exit 1
     fi
     rsync -aH --delete --exclude "/.*" --progress "$rsync_from/" "$rsync_to/"
+    rsync -aH --delete --progress "$rsync_from/._backup" "$rsync_to/"
     ;;
 esac
