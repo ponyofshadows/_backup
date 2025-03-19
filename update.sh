@@ -71,4 +71,9 @@ for path in "${paths[@]}"; do
     fi
 done
 
+# 保存到github
+git add -A
+git commit -a -m "backup: $(date)"
+git push origin master
+
 echo "Backup completed."

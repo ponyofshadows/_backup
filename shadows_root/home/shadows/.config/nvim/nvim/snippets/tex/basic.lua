@@ -35,7 +35,7 @@ return {
     t({"","\\end{align}"}),
   }),
   -- big symbols
-  s("frac", {
+  s("fc", {
     t("\\frac{"),
     i(1, "@numerator@"),
     t("}{"),
