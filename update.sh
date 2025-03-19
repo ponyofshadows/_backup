@@ -52,6 +52,7 @@ paths=(
   /home/shadows/.local/share/fcitx5/rime/default.yaml
   /home/shadows/.local/share/fcitx5/rime/default.custom.yaml
   /home/shadows/.config/zathura
+  /home/shadows/.config/mimeapps.list
 )
 
 # 复制文件和目录
