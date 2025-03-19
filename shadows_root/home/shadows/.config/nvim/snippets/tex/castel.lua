@@ -22,7 +22,7 @@ return {
   s({
     trig = "([A-Za-z])(%d)",  -- 触发条件：字母+单个数字
     regTrig = true,
-    wordTrig = false,
+    wordTrig = true,
     snippetType = "autosnippet",
   }, {
     f(function(_, snip)
