@@ -1,1 +1,0 @@
-waydroid session stop

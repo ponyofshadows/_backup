@@ -58,10 +58,10 @@ paths=(
 for path in "${paths[@]}"; do
     if [[ -e "$path" ]]; then
         # 计算目标路径
-        dest="$BACKUP_DIR/$path"
+        dest="$BACKUP_DIR/"$(dirname $path)""
         
         # 创建目标目录
-        mkdir -p "$(dirname "$dest")"
+        mkdir -p "$dest"
         
         # 复制文件或目录
         cp -a "$path" "$dest"

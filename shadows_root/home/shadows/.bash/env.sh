@@ -8,4 +8,4 @@ export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx
 
 # path of bin
-export PATH="$HOME/_cabin/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
