@@ -74,7 +74,9 @@ done
 
 # 保存到github
 git add -A
+echo "===================================================="
 git commit -a -m "backup: $(date)"
+echo "===================================================="
 git push origin master
 
 echo "Backup completed."
