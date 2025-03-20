@@ -7,7 +7,7 @@ BACKUP_DIR="$HOME/._backup/shadows_root"
 paths=(
   /etc/default/grub
   /etc/systemd/system/wpa_supplicant@wlp4s0.service
-  /etc/fonts/conf.d/64-language-selector-prefer.conf
+  /etc/fonts/local.conf
   /etc/pacman.d/hooks/update_snapshot.hook
   /usr/local/bin/create_btrfs_snapshot.sh
 
