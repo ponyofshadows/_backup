@@ -24,6 +24,11 @@ return function()
   }
   -- 启用 vimtex 补全
   vim.g.vimtex_complete_enabled = 1
+  -- 启动 folding
+  vim.g.vimtex_fold_enabled = 1
+  vim.o.foldmethod = "expr"
+  vim.o.foldexpr = "vimtex#fold#level()"
+  
   -- 启动 vimtex 遮盖（conceal）
   -- vim.g.vimtex_syntax_conceal = {
     -- accents = 1,
