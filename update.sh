@@ -12,7 +12,7 @@ paths=(
   /usr/local/bin/create_btrfs_snapshot.sh
 
   /home/shadows/.config/user-dirs.conf
-  /home/shadows/.config/user-dirs.user-dirs
+  /home/shadows/.config/user-dirs.dirs
   /home/sh/etc/default/grub
   /etc/systemd/system/wpa_supplicant@wlp4s0.service
   /etc/fonts/conf.d/64-language-selector-prefer.conf
