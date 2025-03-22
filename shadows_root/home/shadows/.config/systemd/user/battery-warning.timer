@@ -1,8 +1,0 @@
-[Unit]
-Description=Run battery warning script every 5 minutes
-[Timer]
-OnBootSec=5m
-OnUnitActiveSec=5m
-Unit=battery-warning.service
-[Install]
-WantedBy=timers.target

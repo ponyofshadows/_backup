@@ -17,7 +17,6 @@ return function()
       '-verbose',
       '-file-line-error',
       '-interaction=nonstopmode',
-      '-synctex=1',
       '-auxdir=aux',
     },
     engine = 'xelatex'
