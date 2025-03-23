@@ -27,9 +27,14 @@ return function()
   vim.g.vimtex_fold_enabled = 1
   vim.o.foldmethod = "expr"
   vim.o.foldexpr = "vimtex#fold#level()"
+  vim.g.vimtex_fold_types = {
+    envs = {
+      blacklist = { "itemize", "enumerate", "description" }, -- 这些环境不折叠
+    },
+  }
   
   -- 启动 vimtex 遮盖（conceal）
-  -- vim.g.vimtex_syntax_conceal = {
+  vim.g.vimtex_syntax_conceal = {
     -- accents = 1,
     -- ligatures = 1,
     -- cites = 1,
@@ -41,9 +46,9 @@ return function()
     -- math_fracs = 1,
     -- math_super_sub = 1,
     -- math_symbols = 1,
-    -- sections = 0,
+    sections = 1,
     -- styles = 1
-  -- }
+  }
   vim.opt.conceallevel = 2
   -- vim.opt.concealcursor = ""
   vim.cmd [[

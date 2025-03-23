@@ -72,10 +72,6 @@ vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
 -- vim.o.list = true
 -- vim.o.listchars = "space:·"
--- 补全增强(似乎与cmp冲突）
--- vim.o.wildmenu = true
--- vim.o.wildmode = 'longest:full,full'
-
 
 -- Dont' pass messages to |ins-completin menu|
 vim.o.shortmess = vim.o.shortmess .. 'c'
