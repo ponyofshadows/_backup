@@ -29,7 +29,7 @@ return function()
   vim.o.foldexpr = "vimtex#fold#level()"
   vim.g.vimtex_fold_types = {
     envs = {
-      blacklist = { "itemize", "enumerate", "description" }, -- 这些环境不折叠
+      blacklist = { "itemize", "enumerate", "description", "equation", "align", "align*", "gather", "multline" }
     },
   }
   
