@@ -1,3 +1,9 @@
-
 [Default Applications]
 application/pdf=org.kde.okular.desktop
+application/png=org.nomacs.ImageLounge.desktop
+application/jpeg=org.nomacs.ImageLounge.desktop
+application/jpg=org.nomacs.ImageLounge.desktop
+application/webp=org.nomacs.ImageLounge.desktop
+
+[Added Associations]
+image/jpeg=org.nomacs.ImageLounge.desktop;
