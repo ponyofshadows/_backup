@@ -23,9 +23,8 @@ paths=(
   /home/shadows/.config/user-dirs.user-dirs
   /home/shadows/.config/hypr
   /home/shadows/.config/waybar
-  /home/shadows/.config/systemd/user/battery-warning.timer
-  /home/shadows/.config/systemd/user/battery-warning.service
   /home/shadows/.local/bin/xwechat
+  /home/shadows/.local/bin/performance
   /home/shadows/.bash_profile
   /home/shadows/.bashrc
   /home/shadows/.bash
