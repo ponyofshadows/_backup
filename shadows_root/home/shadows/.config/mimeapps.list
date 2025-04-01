@@ -4,6 +4,8 @@ application/png=org.nomacs.ImageLounge.desktop
 application/jpeg=org.nomacs.ImageLounge.desktop
 application/jpg=org.nomacs.ImageLounge.desktop
 application/webp=org.nomacs.ImageLounge.desktop
+text/x-tex=userapp-kitty -e nvim-ZITV32.desktop
 
 [Added Associations]
 image/jpeg=org.nomacs.ImageLounge.desktop;
+text/x-tex=userapp-kitty -e nvim-ZITV32.desktop;
