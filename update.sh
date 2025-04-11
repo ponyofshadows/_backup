@@ -28,8 +28,7 @@ paths=(
   /home/shadows/.bash_profile
   /home/shadows/.bashrc
   /home/shadows/.bash
-  /home/shadows/.local/bin/z
-  /home/shadows/.local/bin/home_sync.sh
+  /home/shadows/.local/bin
   /home/shadows/.pip
   /home/shadows/.config/nvim
   /home/shadows/.config/papis
@@ -39,12 +38,10 @@ paths=(
   /home/shadows/.config/zathuraadows/.config/hypr
   /home/shadows/.config/systemd/user/battery-warning.timer
   /home/shadows/.config/systemd/user/battery-warning.service
-  /home/shadows/.local/bin/xwechat
   /home/shadows/.bash_profile
   /home/shadows/.bashrc
   /home/shadows/.bash
-  /home/shadows/.local/bin/z
-  /home/shadows/.local/bin/home_sync.sh
+  /home/shadows/.ssh/config
   /home/shadows/.pip
   /home/shadows/.config/nvim
   /home/shadows/.config/papis
