@@ -5,7 +5,11 @@ application/jpeg=org.nomacs.ImageLounge.desktop
 application/jpg=org.nomacs.ImageLounge.desktop
 application/webp=org.nomacs.ImageLounge.desktop
 text/x-tex=userapp-kitty -e nvim-ZITV32.desktop
+text/plain=userapp-kitty -e nvim-ZITV32.desktop
+audio/x-vorbis+ogg=mpv.desktop
 
 [Added Associations]
 image/jpeg=org.nomacs.ImageLounge.desktop;
 text/x-tex=userapp-kitty -e nvim-ZITV32.desktop;
+text/plain=userapp-kitty -e nvim-ZITV32.desktop;
+audio/x-vorbis+ogg=mpv.desktop;
