@@ -23,11 +23,10 @@ paths=(
   /home/shadows/.config/user-dirs.user-dirs
   /home/shadows/.config/hypr
   /home/shadows/.config/waybar
-  /home/shadows/.local/bin/performance
   /home/shadows/.bash_profile
   /home/shadows/.bashrc
   /home/shadows/.bash
-  /home/shadows/.local/bin
+  /home/shadows/.local/bin/*.sh
   /home/shadows/.pip
   /home/shadows/.config/nvim
   /home/shadows/.config/papis
