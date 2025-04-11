@@ -1,4 +1,9 @@
 #!/bin/bash
-
-wl-paste --watch bash -c 'c=$(wl-paste); if [[ $c =~ ^[a-zA-Z] ]]; then t=$(trans -b :zh "$c"); hyprctl notify 1 10000 "rgb(55FF55)" $"📖 $t"; else t=$(trans -b :en "$c"); hyprctl notify 1 10000 "rgb(55FF55)" $"📖 $t"; fi'
-
+wl-paste --watch bash -c 'c=$(wl-paste | tr -d "\n"); 
+if [[ $c =~ ^[a-zA-Z] ]]; then 
+  t=$(curl -s -X POST http://localhost:5000/translate -H "Content-Type: application/json" -d "{\"q\": \"$c\", \"source\": \"en\", \"target\": \"zh\"}" | jq -r ".translatedText");
+  hyprctl notify 6 15000 "rgb(55FF55)" $"📖 $(echo $t | fold -w 40)"; 
+else 
+  t=$(curl -s -X POST http://localhost:5000/translate -H "Content-Type: application/json" -d "{\"q\": \"$c\", \"source\": \"zh\", \"target\": \"en\"}" | jq -r ".translatedText");
+  hyprctl notify 6 15000 "rgb(55FF55)" $"📖 $(echo $t | fold -w 40)"; 
+fi'

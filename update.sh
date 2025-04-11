@@ -15,6 +15,7 @@ paths=(
   /home/shadows/.config/user-dirs.dirs
   /home/sh/etc/default/grub
   /etc/systemd/system/wpa_supplicant@wlp4s0.service
+  /etc/systemd/system/docker.service.d
   /etc/fonts/conf.d/64-language-selector-prefer.conf
   /etc/pacman.d/hooks/update_snapshot.hook
   /usr/local/bin/create_btrfs_snapshot.sh
@@ -27,6 +28,7 @@ paths=(
   /home/shadows/.bashrc
   /home/shadows/.bash
   /home/shadows/.local/bin/*.sh
+  /home/shadows/.local/bin/z
   /home/shadows/.pip
   /home/shadows/.config/nvim
   /home/shadows/.config/papis
