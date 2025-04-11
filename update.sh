@@ -42,7 +42,6 @@ paths=(
   /home/shadows/.bashrc
   /home/shadows/.bash
   /home/shadows/.ssh/config
-  /home/shadows/.curlrc
   /home/shadows/.pip
   /home/shadows/.config/nvim
   /home/shadows/.config/papis
