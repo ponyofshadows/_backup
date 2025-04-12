@@ -1,4 +1,5 @@
 #!/bin/bash
+#required by toggle-translate.sh
 
 CONTAINER_NAME="libretranslate"
 
