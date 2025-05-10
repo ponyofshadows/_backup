@@ -7,9 +7,23 @@ application/webp=org.nomacs.ImageLounge.desktop
 text/x-tex=userapp-kitty -e nvim-ZITV32.desktop
 text/plain=userapp-kitty -e nvim-ZITV32.desktop
 audio/x-vorbis+ogg=mpv.desktop
+application/json=userapp-kitty -e nvim-ZITV32.desktop
+application/x-zerosize=userapp-kitty -e nvim-ZITV32.desktop
+application/x-trash=userapp-kitty -e nvim-ZITV32.desktop
+application/x-java=userapp-kitty -e nvim-ZITV32.desktop
 
 [Added Associations]
-image/jpeg=org.nomacs.ImageLounge.desktop;
+image/jpeg=org.nomacs.ImageLounge.desktop;gimp.desktop;
 text/x-tex=userapp-kitty -e nvim-ZITV32.desktop;
 text/plain=userapp-kitty -e nvim-ZITV32.desktop;
 audio/x-vorbis+ogg=mpv.desktop;
+application/json=userapp-kitty -e nvim-ZITV32.desktop;
+text/x-java=userapp-kitty -e nvim-ZITV32.desktop;
+text/markdown=userapp-kitty -e nvim-ZITV32.desktop;
+text/csv=libreoffice-calc.desktop;userapp-kitty -e nvim-ZITV32.desktop;
+application/x-zerosize=userapp-kitty -e nvim-ZITV32.desktop;
+application/x-trash=userapp-kitty -e nvim-ZITV32.desktop;
+application/x-java=userapp-kitty -e nvim-ZITV32.desktop;
+image/png=gimp.desktop;org.nomacs.ImageLounge.desktop;nomacs-2.desktop;okularApplication_kimgio.desktop;
+text/x-gradle=userapp-kitty -e nvim-ZITV32.desktop;
+application/xml=userapp-kitty -e nvim-ZITV32.desktop;

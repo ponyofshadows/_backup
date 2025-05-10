@@ -5,7 +5,7 @@ return function()
   vim.g.vimtex_build_method = 'latexmk'
   -- 指定编译引擎
   vim.g.vimtex_compiler_latexmk_engines = {
-    _ = '-xelatex',  -- 设置默认引擎为 xelatex
+    _ = '-lualatex',  -- 设置默认引擎为 xelatex
   }
   vim.g.vimtex_compiler_latexmk = {
     build_dir = '',
@@ -19,7 +19,7 @@ return function()
       '-interaction=nonstopmode',
       '-auxdir=aux',
     },
-    engine = 'xelatex'
+    engine = 'lualatex'
   }
   -- 启用 vimtex 补全
   vim.g.vimtex_complete_enabled = 1
