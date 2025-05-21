@@ -1,12 +1,10 @@
 return function()
+  -- 关闭缩进
+  vim.g.vimtex_indent_enabled = 0
   -- 使用 Zathura 作为 PDF 查看器
   vim.g.vimtex_view_method = 'zathura'
   -- 设置编译方法为 latexmk
   vim.g.vimtex_build_method = 'latexmk'
-  -- 指定编译引擎
-  vim.g.vimtex_compiler_latexmk_engines = {
-    _ = '-lualatex',  -- 设置默认引擎为 xelatex
-  }
   vim.g.vimtex_compiler_latexmk = {
     build_dir = '',
     callback = 1,
@@ -17,7 +15,7 @@ return function()
       '-verbose',
       '-file-line-error',
       '-interaction=nonstopmode',
-      '-auxdir=aux',
+      '-auxdir=build',
     },
     engine = 'lualatex'
   }

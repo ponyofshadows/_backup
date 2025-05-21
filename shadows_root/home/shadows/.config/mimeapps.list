@@ -27,3 +27,4 @@ application/x-java=userapp-kitty -e nvim-ZITV32.desktop;
 image/png=gimp.desktop;org.nomacs.ImageLounge.desktop;nomacs-2.desktop;okularApplication_kimgio.desktop;
 text/x-gradle=userapp-kitty -e nvim-ZITV32.desktop;
 application/xml=userapp-kitty -e nvim-ZITV32.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
