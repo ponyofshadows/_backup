@@ -13,7 +13,7 @@ paths=(
 
   /home/shadows/.config/user-dirs.conf
   /home/shadows/.config/user-dirs.dirs
-  /home/sh/etc/default/grub
+  /etc/default/grub
   /etc/systemd/system/wpa_supplicant@wlp4s0.service
   /etc/systemd/system/docker.service.d
   /etc/fonts/conf.d/64-language-selector-prefer.conf
