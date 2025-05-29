@@ -28,3 +28,4 @@ image/png=org.nomacs.ImageLounge.desktop;gimp.desktop;nomacs-2.desktop;okularApp
 text/x-gradle=userapp-kitty -e nvim-ZITV32.desktop;
 application/xml=userapp-kitty -e nvim-ZITV32.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+audio/flac=mpv.desktop;
