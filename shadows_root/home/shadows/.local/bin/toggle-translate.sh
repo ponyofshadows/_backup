@@ -9,7 +9,7 @@ if pgrep -x wl-paste; then
     hyprctl notify 6 3000 'rgb(FF5555)' $'⏸️ 复制后翻译已关闭，但libretranslate仍在运行'
 else
     # 如果没有运行，启动监听进程
-    nohup bash /home/shadows/.local/bin/clipboard-listener.sh > /dev/null 2>&1 &
+    nohup bash ~/.local/bin/clipboard-listener.sh > /dev/null 2>&1 &
     wl-copy --clear
     bash ~/.local/bin/start_libretranslate.sh
     hyprctl notify 6 3000 'rgb(55FF55)' $'🔤 复制后翻译已开启'
