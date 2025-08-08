@@ -16,6 +16,7 @@ paths=(
   /etc/pacman.d/hooks/update_snapshot.hook
   /usr/local/bin/create_btrfs_snapshot.sh
   /etc/vconsole.conf
+  /etc/issue
 
   /home/shadows/.config/user-dirs.conf
   /home/shadows/.config/user-dirs.dirs
