@@ -10,16 +10,15 @@ paths=(
   /etc/pacman.d/hooks/update_snapshot.hook
   /usr/local/bin/create_btrfs_snapshot.sh
 
-  /home/shadows/.config/user-dirs.conf
-  /home/shadows/.config/user-dirs.dirs
   /etc/default/grub
   /etc/systemd/system/docker.service.d
   /etc/fonts/conf.d/64-language-selector-prefer.conf
   /etc/pacman.d/hooks/update_snapshot.hook
   /usr/local/bin/create_btrfs_snapshot.sh
+  /etc/vconsole.conf
 
   /home/shadows/.config/user-dirs.conf
-  /home/shadows/.config/user-dirs.user-dirs
+  /home/shadows/.config/user-dirs.dirs
   /home/shadows/.config/hypr
   /home/shadows/.config/waybar
   /home/shadows/.bash_profile
