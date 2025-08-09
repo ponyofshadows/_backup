@@ -11,7 +11,6 @@
     "modules-center": [],
     "modules-right": [
         "tray",
-        "network",
         "battery",
         "clock"
     ],

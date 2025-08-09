@@ -12,7 +12,6 @@ paths=(
 
   /etc/default/grub
   /etc/systemd/system/docker.service.d
-  /etc/fonts/conf.d/64-language-selector-prefer.conf
   /etc/pacman.d/hooks/update_snapshot.hook
   /usr/local/bin/create_btrfs_snapshot.sh
   /etc/vconsole.conf
