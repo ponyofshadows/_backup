@@ -11,13 +11,29 @@ return function()
     continuous = 1,
     executable = 'latexmk',
     options = {
-      '-shell-escape',
-      '-verbose',
       '-file-line-error',
       '-interaction=nonstopmode',
+      '-synctex=1',
+      '-pv',
+      '-silent',
       '-auxdir=build',
     },
-    engine = 'lualatex'
+    engine = 'pdflatex'
+  }
+
+  -- 使用默认的 quickfix 方法
+  vim.g.vimtex_quickfix_method = 'latexlog'  -- 改为 latexlog（默认方法）
+  vim.g.vimtex_quickfix_enabled = 1
+  vim.g.vimtex_quickfix_mode = 2
+  vim.g.vimtex_quickfix_autoclose_after_keystrokes = 0
+  vim.g.vimtex_quickfix_open_on_warning = 0
+
+  -- 过滤无用警告
+  vim.g.vimtex_quickfix_ignore_filters = {
+    'Underfull \\hbox',
+    'Overfull \\hbox',
+    'Package hyperref Warning',
+    'Package babel Warning',
   }
   -- 启用 vimtex 补全
   vim.g.vimtex_complete_enabled = 1

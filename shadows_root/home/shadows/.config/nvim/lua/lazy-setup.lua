@@ -40,7 +40,7 @@ require("lazy").setup(
   "hrsh7th/cmp-cmdline",
   {
     'lervag/vimtex',
-    init = require("plugins.vimtex-setup")
+    init = require("vimtex-setup")
   },
   "micangl/cmp-vimtex",
   {
