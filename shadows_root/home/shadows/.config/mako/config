@@ -1,0 +1,47 @@
+# ~/.config/mako/config
+
+# 基础布局
+layer=overlay
+anchor=top-right
+width=420
+height=160
+margin=12
+padding=20
+
+# 外观设计 - 现代偏白色主题 + 粉红色边框
+background-color=#f8f9fa
+text-color=#2d3748
+border-size=2
+border-color=#ff79c6
+border-radius=16
+
+# 字体和文本
+font=Inter 11
+markup=1
+max-visible=5
+
+# 时间设置
+default-timeout=8000
+ignore-timeout=1
+
+# 图标设置
+icon-path=/usr/share/icons/Papirus
+max-icon-size=48
+
+# 动画和效果
+progress-color=#ff79c6
+
+# 关键通知样式 - 深粉色边框
+[urgency=critical]
+border-color=#e91e63
+background-color=#fce4ec
+text-color=#ad1457
+border-size=3
+default-timeout=0
+
+# 低优先级通知 - 浅粉色边框
+[urgency=low]
+border-color=#f8a2c2
+background-color=#f9fafb
+text-color=#6b7280
+default-timeout=5000
