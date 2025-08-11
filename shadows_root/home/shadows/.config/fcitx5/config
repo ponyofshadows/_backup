@@ -1,6 +1,8 @@
 [Hotkey]
 # Enumerate when press trigger key repeatedly
 EnumerateWithTriggerKeys=True
+# Temporally switch between first and current Input Method
+AltTriggerKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
 # Time limit in milliseconds for triggering modifier key shortcuts
@@ -10,9 +12,6 @@ ModifierOnlyKeyTimeout=250
 0=Control+space
 1=Zenkaku_Hankaku
 2=Hangul
-
-[Hotkey/AltTriggerKeys]
-0=Shift+Shift_R
 
 [Hotkey/EnumerateForwardKeys]
 0=Control+Shift_L

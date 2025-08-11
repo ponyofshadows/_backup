@@ -8,14 +8,14 @@ paths=(
   /etc/default/grub
   /etc/fonts/local.conf
   /etc/pacman.d/hooks/update_snapshot.hook
-  /usr/local/bin/create_btrfs_snapshot.sh
-
   /etc/default/grub
   /etc/systemd/system/docker.service.d
   /etc/pacman.d/hooks/update_snapshot.hook
-  /usr/local/bin/create_btrfs_snapshot.sh
   /etc/vconsole.conf
   /etc/issue
+  /etc/NetworkManager/NetworkManager.conf
+
+  /usr/local/bin/create_btrfs_snapshot.sh
 
   /home/shadows/.config/user-dirs.conf
   /home/shadows/.config/user-dirs.dirs
@@ -29,10 +29,10 @@ paths=(
   /home/shadows/.pip
   /home/shadows/.config/nvim
   /home/shadows/.config/papis
-  /home/shadows/.config/fcitx5
+  /home/shadows/.config/fcitx5/
   /home/shadows/.config/mako
-  /home/shadows/.local/share/fcitx5/rime/default.yaml
   /home/shadows/.local/share/fcitx5/rime/default.custom.yaml
+  /home/shadows/.local/share/fcitx5/rime/flypy.custom.yaml
   /home/shadows/.config/zathuraadows/.config/hypr
   /home/shadows/.bash_profile
   /home/shadows/.bashrc
