@@ -44,8 +44,6 @@ export FZF_DEFAULT_OPTS="
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="
   --multi
-  --bind 'alt-y:execute(yazi {1..1} >/dev/null 2>&1)'
-  --bind 'alt-v:execute(nvim {+} >/dev/null 2>&1)'
 "
 
 # 5. Alt+C 目录选择配置
