@@ -5,7 +5,8 @@ vim.o.fileencoding = 'utf-8'
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 -- 触发键
-vim.g.mapleader = "\\"
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 -- 使用相对行号
 vim.wo.number = true
 -- vim.wo.relativenumber = true

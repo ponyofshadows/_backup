@@ -20,6 +20,7 @@ paths=(
   /home/shadows/.local/share/applications/kitty-yazi.desktop
   /home/shadows/.config/user-dirs.conf
   /home/shadows/.config/user-dirs.dirs
+  /home/shadows/.config/yazi
   /home/shadows/.config/hypr
   /home/shadows/.config/waybar
   /home/shadows/.bash_profile

@@ -1,0 +1,5 @@
+[[mgr.prepend_keymap]]
+on   = "!"
+for  = "unix"
+run  = 'shell "kitty --detach --directory=$PWD" --silent'
+desc = "Open kitty terminal here"
