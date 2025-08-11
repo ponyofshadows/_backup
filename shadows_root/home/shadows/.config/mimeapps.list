@@ -11,6 +11,7 @@ application/json=userapp-kitty -e nvim-ZITV32.desktop
 application/x-zerosize=userapp-kitty -e nvim-ZITV32.desktop
 application/x-trash=userapp-kitty -e nvim-ZITV32.desktop
 application/x-java=userapp-kitty -e nvim-ZITV32.desktop
+inode/directory=kitty-yazi.desktop
 
 [Added Associations]
 image/jpeg=org.nomacs.ImageLounge.desktop;gimp.desktop;

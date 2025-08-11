@@ -17,6 +17,7 @@ paths=(
 
   /usr/local/bin/create_btrfs_snapshot.sh
 
+  /home/shadows/.local/share/applications/kitty-yazi.desktop
   /home/shadows/.config/user-dirs.conf
   /home/shadows/.config/user-dirs.dirs
   /home/shadows/.config/hypr

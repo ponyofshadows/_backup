@@ -60,3 +60,18 @@ fi
 if [[ -f /usr/share/fzf/key-bindings.bash ]]; then
   source /usr/share/fzf/key-bindings.bash
 fi
+#-------------------------------------------------
+
+
+# 快捷命令：在后台运行程序，与终端分离
+r() {
+    if [ $# -eq 0 ]; then
+        echo "用法: r <程序名> [参数...]"
+        return 1
+    fi
+    
+    # 使用setsid创建新会话，完全脱离终端控制
+    setsid "$@" > /dev/null 2>&1 &
+    
+    echo "程序 '$1' 已在新会话中启动，PID: $!"
+}
