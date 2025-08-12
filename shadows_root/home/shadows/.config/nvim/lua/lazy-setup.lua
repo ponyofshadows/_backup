@@ -91,6 +91,13 @@ require("lazy").setup(
       -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
       vim.g.loaded_netrwPlugin = 1
     end,
+  },
+  {
+      'smoka7/hop.nvim',
+      version = "*",
+      opts = {
+          keys = 'etovxqpdygfblzhckisuran'
+      }
   }
 }
 )

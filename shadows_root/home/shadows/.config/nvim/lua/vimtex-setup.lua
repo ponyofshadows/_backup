@@ -38,15 +38,38 @@ return function()
   -- 启用 vimtex 补全
   vim.g.vimtex_complete_enabled = 1
   -- 启动 folding
-  vim.g.vimtex_fold_enabled = 1
-  vim.o.foldmethod = "expr"
-  vim.o.foldexpr = "vimtex#fold#level()"
-  vim.g.vimtex_fold_types = {
-    envs = {
-      blacklist = { "itemize", "enumerate", "description", "equation", "align", "align*", "gather", "multline" }
-    },
-  }
-  
+  -- 创建一个自动命令组
+  vim.api.nvim_create_augroup("TexFolding", { clear = true })
+
+  -- 只针对 tex 文件启用折叠
+  vim.api.nvim_create_autocmd("FileType", {
+    group = "TexFolding",
+    pattern = "tex",
+    callback = function()
+      -- 启用 vimtex 折叠
+      vim.g.vimtex_fold_enabled = 1
+      
+      -- 配置只折叠 sections 和 frames
+      vim.g.vimtex_fold_types = {
+        sections = {
+          sections = { "section", "subsection" },  -- 只折叠这些 section 类型
+        },
+        envs = {
+          whitelist = { "frame" },  -- 只允许 frame 环境折叠
+          blacklist = {},  -- 清空黑名单，让 whitelist 生效
+        },
+      }
+      
+      vim.opt_local.foldmethod = "expr"
+      vim.opt_local.foldexpr = "vimtex#fold#level(v:lnum)"
+      vim.opt_local.foldenable = true
+      
+      -- 刷新折叠
+      vim.defer_fn(function()
+        vim.cmd('normal! zx')
+      end, 100)
+    end
+  })
   -- 启动 vimtex 遮盖（conceal）
   vim.g.vimtex_syntax_conceal = {
     -- accents = 1,
