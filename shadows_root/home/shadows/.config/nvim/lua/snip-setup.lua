@@ -5,4 +5,7 @@ require("luasnip").config.set_config({
 })
 
 -- load snippets
-require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets"})
+require("luasnip.loaders.from_lua").lazy_load({
+  paths = "~/.config/nvim/snippets/tex",
+  ft = {"tex", "latex"}
+})

@@ -75,3 +75,6 @@ r() {
     
     echo "程序 '$1' 已在新会话中启动，PID: $!"
 }
+
+# copilot
+eval "$(github-copilot-cli alias -- "$0")"
