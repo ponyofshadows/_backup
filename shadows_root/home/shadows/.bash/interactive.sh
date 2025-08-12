@@ -78,3 +78,6 @@ r() {
 
 # copilot
 eval "$(github-copilot-cli alias -- "$0")"
+
+# my pkg
+alias listpkg="pacman -Qent | awk '{print \$1}' | xargs expac --timefmt='%Y-%m-%d %H:%M:%S' '%l\t%n' | sort"
