@@ -12,3 +12,6 @@ export SDL_IM_MODULE=fcitx
 
 # path of bin
 export PATH="$HOME/.local/bin:$PATH"
+
+# pythob shadowslib
+export PYTHONPATH=/home/shadows/workspace/lib/python/shadowslib/.venv/lib/python3.13/site-packages:$PYTHONPATH
