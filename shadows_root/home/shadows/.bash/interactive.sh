@@ -80,4 +80,4 @@ r() {
 eval "$(github-copilot-cli alias -- "$0")"
 
 # my pkg
-alias listpkg="pacman -Qent | awk '{print \$1}' | xargs expac --timefmt='%Y-%m-%d %H:%M:%S' '%i\t%n' | sort -k1 && echo '--- AUR Packages ---' && pacman -Qem | awk '{print \$1}' | xargs expac --timefmt='%Y-%m-%d %H:%M:%S' '%i\t%n' | sort -k1"
+alias listpkg="pacman -Qet | awk '{print \$1}' | xargs expac --timefmt='%Y-%m-%d %H:%M:%S' '%l\t%n' | sort"
