@@ -198,42 +198,42 @@ require("lazy").setup(
       { "<leader>cf", "<cmd>CopilotChatFix<CR>", desc = "CopilotChat - Fix code" },
       { "<leader>ct", "<cmd>CopilotChatTests<CR>", desc = "CopilotChat - Generate tests" },
     },
-    {
-      "nvim-telescope/telescope.nvim",
-      dependencies = { 
-        "nvim-lua/plenary.nvim",
-        -- 添加 fzf 原生扩展以提高性能
-        {
-          "nvim-telescope/telescope-fzf-native.nvim",
-          build = "make",
-        },
-      },
-      config = function()
-        -- 加载 telescope
-        local telescope = require("telescope")
-        
-        -- 设置 telescope，并加载 fzf 扩展
-        telescope.setup({
-          extensions = {
-            fzf = {
-              fuzzy = true,
-              override_generic_sorter = true,
-              override_file_sorter = true,
-              case_mode = "smart_case",
-            },
-          },
-        })
-        
-        -- 加载 fzf 扩展
-        telescope.load_extension("fzf")
-        
-        -- 设置快捷键
-        local builtin = require("telescope.builtin")
-        vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-        vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-        vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-      end,
-    },
+    -- {
+    --   "nvim-telescope/telescope.nvim",
+    --   dependencies = { 
+    --     "nvim-lua/plenary.nvim",
+    --     -- 添加 fzf 原生扩展以提高性能
+    --     {
+    --       "nvim-telescope/telescope-fzf-native.nvim",
+    --       build = "make",
+    --     },
+    --   },
+    --   config = function()
+    --     -- 加载 telescope
+    --     local telescope = require("telescope")
+    --     
+    --     -- 设置 telescope，并加载 fzf 扩展
+    --     telescope.setup({
+    --       extensions = {
+    --         fzf = {
+    --           fuzzy = true,
+    --           override_generic_sorter = true,
+    --           override_file_sorter = true,
+    --           case_mode = "smart_case",
+    --         },
+    --       },
+    --     })
+    --     
+    --     -- 加载 fzf 扩展
+    --     telescope.load_extension("fzf")
+    --     
+    --     -- 设置快捷键
+    --     local builtin = require("telescope.builtin")
+    --     vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+    --     vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+    --     vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+    --   end,
+    -- },
   }
 }
 )
