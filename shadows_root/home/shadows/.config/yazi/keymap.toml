@@ -12,6 +12,10 @@ on   = "<Enter>"
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 [[mgr.prepend_keymap]]
-on   = "`"
+on   = "~"
 run  = "cd ~"
+desc = "Enter the child directory, or open the file"
+[[mgr.prepend_keymap]]
+on   = "`"
+run  = "cd ~/workspace/"
 desc = "Enter the child directory, or open the file"
