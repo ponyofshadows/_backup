@@ -99,79 +99,105 @@ require("lazy").setup(
           keys = 'etovxqpdygfblzhckisuran'
       }
   },
+  -- Copilot 主插件
   {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      event = "InsertEnter",
-      config = function()
-        require("copilot").setup({
-          -- 面板设置（显示多个建议）
-          panel = {
-            enabled = true,
-            auto_refresh = true,
-            keymap = {
-              jump_prev = "[[",
-              jump_next = "]]",
-              accept = "<CR>",
-              refresh = "gr",
-              open = "<M-CR>", -- Alt+Enter 打开建议面板
-            },
-            layout = {
-              position = "bottom", -- 面板位置: top | bottom | left | right
-              ratio = 0.4, -- 面板高度比例
-            },
-          },
-          -- 内联建议设置
-          suggestion = {
-            enabled = true,
-            auto_trigger = true, -- 自动触发建议
-            debounce = 75, -- 建议延迟（毫秒）
-            keymap = {
-              accept = "<C-j>", -- Ctrl+j 接受建议
-              accept_word = "<C-l>", -- Ctrl+l 接受单词
-              accept_line = "<C-\\>", -- Ctrl+\ 接受整行
-              next = "<C-9>", -- Ctrl+9 下一个建议
-              prev = "<C-0>", -- Ctrl+0 上一个建议
-              dismiss = "<C-c>", -- Ctrl+c 取消建议
-            },
-            disable_on_esc = true,  -- 关键设置：按ESC时禁用Copilot建议
-          },
-          -- 文件类型设置（哪些文件类型启用/禁用）
-          filetypes = {
-            yaml = true,
-            markdown = true,
-            help = false,
-            gitcommit = false,
-            gitrebase = false,
-            hgcommit = false,
-            svn = false,
-            cvs = false,
-            --["."] = false, -- 禁用文件名中带点的文件
-          },
-          -- 复制设置
-          copilot_node_command = 'node', -- 使用系统 Node
-          server_opts_overrides = {}, -- 服务器选项覆盖
-        })
-      end,
-  },
-  -- 第三方 Copilot 与 nvim-cmp 的集成
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = { 
-      "zbirenbaum/copilot.lua",
-      "hrsh7th/nvim-cmp",
-    },
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
     config = function()
-      require("copilot_cmp").setup({
-        method = "getCompletionsCycling", -- 建议方法
-        formatters = {
-          label = require("copilot_cmp.format").format_label_text, -- 格式化标签
-          insert_text = require("copilot_cmp.format").format_insert_text, -- 格式化插入文本
-          preview = require("copilot_cmp.format").deindent, -- 格式化预览
+      require("copilot").setup({
+        -- 面板设置（显示多个建议）
+        panel = {
+          enabled = true,
+          auto_refresh = true,
+          keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+            open = "<M-CR>", -- Alt+Enter 打开建议面板
+          },
+          layout = {
+            position = "bottom", -- 面板位置: top | bottom | left | right
+            ratio = 0.4, -- 面板高度比例
+          },
         },
+        -- 内联建议设置
+        suggestion = {
+          enabled = true,
+          auto_trigger = true, -- 自动触发建议
+          debounce = 75, -- 建议延迟（毫秒）
+          keymap = {
+            accept = "<C-j>", -- Ctrl+j 接受建议
+            accept_word = "<C-l>", -- Ctrl+l 接受单词
+            accept_line = "<C-\\>", -- Ctrl+\ 接受整行
+            next = "<C-9>", -- Ctrl+9 下一个建议
+            prev = "<C-0>", -- Ctrl+0 上一个建议
+            dismiss = "<C-c>", -- Ctrl+c 取消建议
+          },
+          disable_on_esc = true,  -- 关键设置：按ESC时禁用Copilot建议
+        },
+        -- 文件类型设置（哪些文件类型启用/禁用）
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          help = false,
+          gitcommit = false,
+          gitrebase = false,
+          hgcommit = false,
+          svn = false,
+          cvs = false,
+          --["."] = false, -- 禁用文件名中带点的文件
+        },
+        -- 复制设置
+        copilot_node_command = 'node', -- 使用系统 Node
+        server_opts_overrides = {}, -- 服务器选项覆盖
+      })
+      
+      -- 设置默认禁用 Copilot (延迟执行确保初始化完成)
+      vim.defer_fn(function()
+        vim.cmd("Copilot disable")
+        vim.g.copilot_enabled = false
+      end, 500)
+      
+      -- Copilot 切换功能
+      local function toggle_copilot()
+        local enabled = vim.g.copilot_enabled or false
+        
+        if enabled then
+          -- 禁用 Copilot
+          vim.cmd("Copilot disable")
+          vim.g.copilot_enabled = false
+          vim.notify("Copilot 已禁用", vim.log.levels.INFO)
+        else
+          -- 启用 Copilot
+          vim.cmd("Copilot enable")
+          vim.g.copilot_enabled = true
+          vim.notify("Copilot 已启用", vim.log.levels.INFO)
+        end
+      end
+      
+      -- 添加状态查看功能
+      local function show_copilot_status()
+        local status = vim.g.copilot_enabled and "已启用" or "已禁用"
+        vim.notify("Copilot: " .. status, vim.log.levels.INFO)
+      end
+      
+      -- 设置快捷键
+      vim.keymap.set("n", "<leader>cp", toggle_copilot, { 
+        noremap = true, 
+        silent = true, 
+        desc = "Toggle Copilot" 
+      })
+      
+      vim.keymap.set("n", "<leader>cs", show_copilot_status, { 
+        noremap = true, 
+        silent = true, 
+        desc = "Show Copilot Status" 
       })
     end,
   },
+
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "canary",
@@ -184,7 +210,7 @@ require("lazy").setup(
       show_help = true,
       mappings = {
         close = "q",
-        reset = "<C-l>",
+        --reset = "<C-l>",
         --complete = "<Tab>",
         submit_prompt = "<CR>",
         accept_diff = "<C-a>",
@@ -197,43 +223,7 @@ require("lazy").setup(
       { "<leader>ce", "<cmd>CopilotChatExplain<CR>", desc = "CopilotChat - Explain code" },
       { "<leader>cf", "<cmd>CopilotChatFix<CR>", desc = "CopilotChat - Fix code" },
       { "<leader>ct", "<cmd>CopilotChatTests<CR>", desc = "CopilotChat - Generate tests" },
-    },
-    -- {
-    --   "nvim-telescope/telescope.nvim",
-    --   dependencies = { 
-    --     "nvim-lua/plenary.nvim",
-    --     -- 添加 fzf 原生扩展以提高性能
-    --     {
-    --       "nvim-telescope/telescope-fzf-native.nvim",
-    --       build = "make",
-    --     },
-    --   },
-    --   config = function()
-    --     -- 加载 telescope
-    --     local telescope = require("telescope")
-    --     
-    --     -- 设置 telescope，并加载 fzf 扩展
-    --     telescope.setup({
-    --       extensions = {
-    --         fzf = {
-    --           fuzzy = true,
-    --           override_generic_sorter = true,
-    --           override_file_sorter = true,
-    --           case_mode = "smart_case",
-    --         },
-    --       },
-    --     })
-    --     
-    --     -- 加载 fzf 扩展
-    --     telescope.load_extension("fzf")
-    --     
-    --     -- 设置快捷键
-    --     local builtin = require("telescope.builtin")
-    --     vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-    --     vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-    --     vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
-    --   end,
-    -- },
-  }
+    }, 
+  },
 }
 )
