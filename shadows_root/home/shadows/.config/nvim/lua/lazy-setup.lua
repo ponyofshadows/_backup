@@ -185,7 +185,7 @@ require("lazy").setup(
       mappings = {
         close = "q",
         reset = "<C-l>",
-        complete = "<Tab>",
+        --complete = "<Tab>",
         submit_prompt = "<CR>",
         accept_diff = "<C-a>",
         show_diff = "<C-s>",
