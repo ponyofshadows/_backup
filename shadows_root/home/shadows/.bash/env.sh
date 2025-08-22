@@ -4,8 +4,8 @@ export EDITOR=nvim
 # fcitx5
 
 #comment these for wayland
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
 
 export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx

@@ -81,3 +81,6 @@ eval "$(github-copilot-cli alias -- "$0")"
 
 # my pkg
 alias listpkg="pacman -Qet | awk '{print \$1}' | xargs expac --timefmt='%Y-%m-%d %H:%M:%S' '%l\t%n' | sort"
+
+# cd workspace
+alias cdw="cd ~/workspace/"
