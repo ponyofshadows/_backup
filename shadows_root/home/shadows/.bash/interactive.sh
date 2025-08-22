@@ -84,3 +84,6 @@ alias listpkg="pacman -Qet | awk '{print \$1}' | xargs expac --timefmt='%Y-%m-%d
 
 # cd workspace
 alias cdw="cd ~/workspace/"
+
+# uv python shadowslib
+alias spy="uv run --project ~/workspace/lib/python/shadowslib python"
