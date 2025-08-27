@@ -1,0 +1,6 @@
+[Unit]
+Description=Run my script at midnight
+
+[Service]
+Type=oneshot
+ExecStart=/home/shadows/.local/bin/midnight.sh

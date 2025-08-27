@@ -23,6 +23,7 @@ paths=(
   /home/shadows/.config/yazi
   /home/shadows/.config/hypr
   /home/shadows/.config/waybar
+  /home/shadows/.config/systemd/user/
   /home/shadows/.bash_profile
   /home/shadows/.bashrc
   /home/shadows/.bash
