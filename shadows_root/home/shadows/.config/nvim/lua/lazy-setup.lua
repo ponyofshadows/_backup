@@ -225,5 +225,93 @@ require("lazy").setup(
       { "<leader>ct", "<cmd>CopilotChatTests<CR>", desc = "CopilotChat - Generate tests" },
     }, 
   },
+  -- debug
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+          "nvim-neotest/nvim-nio",
+        },
+      },
+      "theHamsta/nvim-dap-virtual-text",
+      "jay-babu/mason-nvim-dap.nvim",
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap-python", -- Python DAP
+    },
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+
+      -- 虚拟文本
+      require("nvim-dap-virtual-text").setup()
+
+      -- mason 配置
+      require("mason").setup()
+      require("mason-nvim-dap").setup({ automatic_installation = true })
+
+      -- dap-ui 配置
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+
+      -- 快捷键
+      vim.keymap.set("n", "<F5>", dap.continue, { desc = "Start/Continue" })
+      vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Step Over" })
+      vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Step Into" })
+      vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Step Out" })
+      vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+      vim.keymap.set("n", "<leader>dr", dap.repl.open, { desc = "Open REPL" })
+      vim.keymap.set("n", "<leader>du", dapui.toggle, { desc = "Toggle DAP UI" })
+
+      -- ========== Python ==========
+      local dap_python = require("dap-python")
+      -- 指向系统 python-debugpy
+      dap_python.setup("python")  -- 或者 python3
+
+      -- ========== Rust/C++ ==========
+      local mason_registry = require("mason-registry")
+      local codelldb_path = vim.fn.exepath("codelldb") -- 如果用 AUR 安装
+      if codelldb_path == "" then
+        vim.notify("codelldb not found in PATH", vim.log.levels.WARN)
+      end
+
+      dap.adapters.codelldb = {
+        type = "server",
+        port = "${port}",
+        executable = {
+          command = codelldb_path,
+          args = {"--port", "${port}"},
+          detached = false,
+        },
+      }
+
+      dap.configurations.rust = {
+        {
+          name = "Launch Rust binary",
+          type = "codelldb",
+          request = "launch",
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+          args = {},
+        },
+      }
+
+      dap.configurations.cpp = dap.configurations.rust
+      dap.configurations.c = dap.configurations.rust
+    end,
+  },
+
 }
 )
