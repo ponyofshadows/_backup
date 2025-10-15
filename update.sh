@@ -12,7 +12,6 @@ paths=(
   /etc/systemd/system/docker.service.d
   /etc/pacman.d/hooks/update_snapshot.hook
   /etc/vconsole.conf
-  /etc/issue
   /etc/NetworkManager/NetworkManager.conf
 
   /usr/local/bin/create_btrfs_snapshot.sh
