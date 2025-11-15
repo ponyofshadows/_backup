@@ -30,7 +30,6 @@ paths=(
   /home/shadows/.local/bin/z
   /home/shadows/.pip
   /home/shadows/.config/nvim
-  /home/shadows/.config/papis
   /home/shadows/.config/fcitx5/
   /home/shadows/.config/mako
   /home/shadows/.local/share/fcitx5/rime/default.custom.yaml
